@@ -1,10 +1,10 @@
 # Setup
 title:               Rose
 tagline:             'blog'
-description:         'Welcome Rose blog'
+description:         'Welcome to Rose blog'
 url:                 
 baseurl:             ''
-paginate:            5
+paginate:            1
 
 # About/contact
 author:
