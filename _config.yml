@@ -3,7 +3,7 @@ title:               Rose
 tagline:             'blog'
 description:         'Welcome to Rose blog'
 url:                 
-baseurl:             /study
+baseurl:             
 paginate:            1
 
 # About/contact
