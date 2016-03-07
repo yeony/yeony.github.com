@@ -43,3 +43,4 @@ button.setOnAction(event ->
 
 ### Note
 함수형 인터페이스에 @FunctionalInterface 애노테이션을 붙이면 좋다. 컴파일러가 단일 추상 메소드를 갖춘 인터페이스인지 검사한다. javadoc 페이지에서 해당 인터페이스가 함수 인터페이스임을 알리는 문장을 포함한다.
+
