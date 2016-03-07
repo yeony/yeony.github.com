@@ -1,3 +1,1 @@
 # Rose Blog
-
-Hi, Rose
