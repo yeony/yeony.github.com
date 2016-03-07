@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 람다표현식 문법
+categories : [java 8]
 --- 
 
 자바는 타입 결합이 강한 언어이기 때문에 파라미터 타입을 지정해야한다.
