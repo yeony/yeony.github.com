@@ -1,7 +1,6 @@
 ---
 layout: post
 title: 함수형 인터페이스
-categories : [java 8]
 --- 
 
 > 람다표현식을 함수형 인터페이스로 변환할 수 있다.
