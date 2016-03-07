@@ -1,15 +1,21 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+relative_permalinks: true
+
 # Setup
 title:               Rose
-tagline:             'blog'
-description:         'Welcome to Rose blog'
-url:                 
-baseurl:             
+tagline:             'Blog'
+description:         'Welcome to Rose Blog'
+url:                 http://yeony.github.io
+baseurl:             ''
 paginate:            1
 
 # About/contact
 author:
   name:              Yeonhee Jo
-  url:               
+  url:               https://twitter.com/mdo
   email:             yeony59@gmail.com
 
 # Custom vars
