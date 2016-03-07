@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      람다표현식 문법 &middot; Lanyon
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about.html">About</a>
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+
+    <a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a>
+    <a class="sidebar-nav-item" href="">GitHub project</a>
+    <span class="sidebar-nav-item">Currently v1.0.0</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2016. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Lanyon</a>
+            <small>A Jekyll theme</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">람다표현식 문법</h1>
+  <span class="post-date">07 Mar 2016</span>
+  <p>자바는 타입 결합이 강한 언어이기 때문에 파라미터 타입을 지정해야한다.
+람다표현식의 결과타입은 지정하지 않는다. 결과타입은 항상 문맥으로 추정된다. 
+예를 들어 다음 표현식은 int 타입 결과를 기대하는 문맥에서 사용할 수 있다.</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">(</span><span class="nb">String</span> <span class="nx">first</span><span class="p">,</span> <span class="nb">String</span> <span class="nx">second</span><span class="p">)</span> 
+    <span class="o">-&gt;</span> <span class="nx">Integer</span><span class="p">.</span><span class="nx">compare</span><span class="p">(</span><span class="nx">first</span><span class="p">.</span><span class="nx">length</span><span class="p">(),</span> <span class="nx">second</span><span class="p">.</span><span class="nx">length</span><span class="p">())</span></code></pre></div>
+
+<h3 id="section">만일 표현식이 1줄 이상이라면 {} 로 감싼다.</h3>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">(</span><span class="nb">String</span> <span class="nx">first</span><span class="p">,</span> <span class="nb">String</span> <span class="nx">second</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">first</span><span class="p">.</span><span class="nx">length</span><span class="p">()</span> <span class="o">&lt;</span> <span class="nx">second</span><span class="p">.</span><span class="nx">length</span><span class="p">())</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">first</span><span class="p">.</span><span class="nx">length</span><span class="p">()</span> <span class="o">&gt;</span> <span class="nx">second</span><span class="p">.</span><span class="nx">length</span><span class="p">())</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<h3 id="section-1">람다표현식이 파라미터를 받지 않을때 빈 괄호를 사용한다.</h3>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="nx">i</span> <span class="o">++</span><span class="p">)</span> <span class="nx">doWork</span><span class="p">();</span> <span class="p">}</span></code></pre></div>
+
+<h3 id="section-2">파라미터 타입을 추정할 수 있는 경우에는 타입을 생략할 수 있다.</h3>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">Comparator</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span> <span class="nx">comp</span>
+    <span class="o">=</span> <span class="p">(</span><span class="nx">first</span><span class="p">,</span> <span class="nx">second</span><span class="p">)</span> <span class="c1">// (String first, String second) 와 같다.</span>
+        <span class="o">-&gt;</span> <span class="nx">Integer</span><span class="p">.</span><span class="nx">compare</span><span class="p">(</span><span class="nx">first</span><span class="p">.</span><span class="nx">length</span><span class="p">(),</span> <span class="nx">second</span><span class="p">.</span><span class="nx">length</span><span class="p">())</span></code></pre></div>
+
+<h3 id="section-3">추정 가능한 파라미터 1개를 받으면 괄호를 생략할 수 있다.</h3>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">EventHandler</span><span class="o">&lt;</span><span class="nx">ActionEvent</span><span class="o">&gt;</span> <span class="nx">listener</span> <span class="o">=</span> 
+    <span class="nx">event</span> <span class="o">-&gt;</span> <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;Thanks for clicking!&quot;</span><span class="p">);</span>
+    <span class="c1">// (event) -&gt; 또는 (ActionEvent event) -&gt;</span></code></pre></div>
+
+<h3 id="note">Note</h3>
+<ul>
+  <li>메소드 파라미터와 마찬가지 방식으로 람다 파라미터에 애노테이션이나 final 를 붙일 수 있다.</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">(</span><span class="kr">final</span> <span class="nb">String</span> <span class="nx">name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">...</span> 
+<span class="p">(</span><span class="err">@</span><span class="nx">NonNull</span> <span class="nb">String</span> <span class="nx">name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">...</span></code></pre></div>
+
+<ul>
+  <li>람다 표현식에서 어떤 경우에는 값을 리턴하고, 다른 경우에는 리턴하지 않는 것은 규칙에 어긋난다.
+예를 들어 (int x) -&gt; { if (x &gt;= 0) return 1; } 은 잘못된 것이다.</li>
+</ul>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2016/03/07/why-lambda.html">
+            왜 람다인가
+            <small>07 Mar 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/03/07/functional-interface.html">
+            함수형 인터페이스
+            <small>07 Mar 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>
